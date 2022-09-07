@@ -1,6 +1,6 @@
 #include "Point.h"
 
-void saveFile(const char* path, int index)
+void Point::saveFile(const char* path, int index)
 {
     fstream file(path, ios::binary | ios::out);
     file.seekp(index * (sizeof * this), ios::beg);
@@ -9,7 +9,7 @@ void saveFile(const char* path, int index)
     file.close();
 }
 
-void getFile(const char* path, int index)
+void Point::getFile(const char* path, int index)
 {
     fstream file(path, ios::binary | ios::in);
     file.seekp(index * (sizeof * this), ios::beg);
